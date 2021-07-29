@@ -2,6 +2,7 @@ class Graph {
     constructor() {
         this.adjecencyList = {};
     }
+    // test
 
     addVertex(vertex) {
         if (!this.adjecencyList[vertex]) {
@@ -23,7 +24,7 @@ class Graph {
 
     removerVertex(vertex) {
         for (let prop in this.adjecencyList) {
-            this.removeEdge(prop, vertex)
+            this.removeEdge(prop, vertex);
         }
         delete this.adjecencyList[vertex];
     }
