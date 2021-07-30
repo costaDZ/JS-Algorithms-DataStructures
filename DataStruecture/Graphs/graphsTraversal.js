@@ -1,3 +1,4 @@
+
 class Graph {
     constructor() {
         this.adjecencyList = {};
@@ -36,27 +37,22 @@ let list = new Graph();
 
 
 
-// list.addVertex("Tokyo");
-// list.addVertex("Berlin");
-// list.addVertex("London");
-// list.addVertex("Moscow");
 
 
-// list.addEdge("Tokyo", "Berlin");
-// list.addEdge("Berlin", "Moscow");
-// list.addEdge("London", "Moscow");
-// list.addEdge("Tokyo", "Moscow");
-// list.addEdge("Berlin", "London");
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
 
 
-// list.removeEdge("Berlin", "Moscow");
-// list.removeEdge("London", "Moscow");
-
-// list.removerVertex("London");
-// list.removerVertex("Berlin");
-
-
-
-
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
 
 console.log(list);
