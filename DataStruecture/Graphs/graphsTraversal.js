@@ -30,45 +30,64 @@ class Graph {
         delete this.adjecencyList[vertex];
     }
 
-    depthFirstRecursive(strVtx) {
+    depthFirstRecursive1(strVtx) {
         let list = [];
         let visited = {};
         let adjecencyList = this.adjecencyList;
-
         (function DFS(Vtx) {
             if (!Vtx) return null;
-
             visited[Vtx] = true;
             list.push(Vtx);
-
             for (let val of adjecencyList[Vtx]) {
                 if (!visited[val]) {
                     DFS(val);
                 }
             }
         })(strVtx);
-
         return list;
     }
 
-    // depthFirstRecursive(start) {
-    //     const result = [];
-    //     const visited = {};
-    //     const adjacencyList = this.adjecencyList;
+    depthFirstRecursive(start) {
+        const result = [];
+        const visited = {};
+        const adjacencyList = this.adjecencyList;
 
-    //     (function dfs(vertex) {
-    //         if (!vertex) return null;
-    //         visited[vertex] = true;
-    //         result.push(vertex);
-    //         adjacencyList[vertex].forEach(neighbor => {
-    //             if (!visited[neighbor]) {
-    //                 return dfs(neighbor)
-    //             }
-    //         });
-    //     })(start);
+        (function dfs(vertex) {
+            if (!vertex) return null;
+            visited[vertex] = true;
+            result.push(vertex);
+            adjacencyList[vertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    return dfs(neighbor)
+                }
+            });
+        })(start);
 
-    //     return result;
-    // }
+        return result;
+    }
+
+
+
+    depthFirstIterative(start) {
+        const stack = [start];
+        const result = [];
+        const visited = {};
+        let currentVertex;
+
+        visited[start] = true;
+        while (stack.length) {
+            currentVertex = stack.pop();
+            result.push(currentVertex);
+
+            this.adjecencyList[currentVertex].forEach(neighbor => {
+                if (!visited[neighbor]) {
+                    visited[neighbor] = true;
+                    stack.push(neighbor)
+                }
+            });
+        }
+        return result;
+    }
 }
 
 
@@ -85,6 +104,9 @@ list.addVertex("C")
 list.addVertex("D")
 list.addVertex("E")
 list.addVertex("F")
+list.addVertex("k")
+list.addVertex("l")
+
 
 list.addEdge("A", "B")
 list.addEdge("A", "C")
@@ -93,8 +115,23 @@ list.addEdge("C", "E")
 list.addEdge("D", "E")
 list.addEdge("D", "F")
 list.addEdge("E", "F")
-//console.log(list);
-
-console.log(list.depthFirstRecursive("A"));
+list.addEdge("E", "k")
+list.addEdge("E", "l")
 
 console.log(list);
+
+console.log(list.depthFirstRecursive1("A"));
+console.log(list.depthFirstRecursive("A"));
+
+console.log(list.depthFirstIterative("A"));
+
+
+console.log(list);
+
+//          A
+//        /   \
+//       B     C
+//       |     |
+//       D --- E
+//        \   /
+//          F
