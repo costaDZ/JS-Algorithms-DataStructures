@@ -29,6 +29,33 @@ class Graph {
         }
         delete this.adjecencyList[vertex];
     }
+
+    depthFirstTraversal(strVtx) {
+
+        // let test = this.adjecencyList[strVtx];
+
+        let list = [];
+        let visited = {};
+
+        function DFS(Vtx) {
+            if (!Vtx.length) return null;
+
+            visited[Vtx] = true;
+            list.push(Vtx);
+
+            console.log(Vtx);
+
+            for (let val of this.adjecencyList[Vtx]) {
+                if (!visited[val]) {
+                    DFS(val)
+                }
+            }
+        }
+
+        DFS(strVtx);
+
+        return list;
+    }
 }
 
 
@@ -39,20 +66,23 @@ let list = new Graph();
 
 
 
-g.addVertex("A")
-g.addVertex("B")
-g.addVertex("C")
-g.addVertex("D")
-g.addVertex("E")
-g.addVertex("F")
+list.addVertex("A")
+list.addVertex("B")
+list.addVertex("C")
+list.addVertex("D")
+list.addVertex("E")
+list.addVertex("F")
 
 
-g.addEdge("A", "B")
-g.addEdge("A", "C")
-g.addEdge("B", "D")
-g.addEdge("C", "E")
-g.addEdge("D", "E")
-g.addEdge("D", "F")
-g.addEdge("E", "F")
+list.addEdge("A", "B")
+list.addEdge("A", "C")
+list.addEdge("B", "D")
+list.addEdge("C", "E")
+list.addEdge("D", "E")
+list.addEdge("D", "F")
+list.addEdge("E", "F")
+console.log(list);
+
+console.log(list.depthFirstTraversal("A"));
 
 console.log(list);
