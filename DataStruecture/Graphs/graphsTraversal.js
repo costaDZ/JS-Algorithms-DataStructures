@@ -30,32 +30,45 @@ class Graph {
         delete this.adjecencyList[vertex];
     }
 
-    depthFirstTraversal(strVtx) {
-
-        // let test = this.adjecencyList[strVtx];
-
+    depthFirstRecursive(strVtx) {
         let list = [];
         let visited = {};
+        let adjecencyList = this.adjecencyList;
 
-        function DFS(Vtx) {
-            if (!Vtx.length) return null;
+        (function DFS(Vtx) {
+            if (!Vtx) return null;
 
             visited[Vtx] = true;
             list.push(Vtx);
 
-            console.log(Vtx);
-
-            for (let val of this.adjecencyList[Vtx]) {
+            for (let val of adjecencyList[Vtx]) {
                 if (!visited[val]) {
-                    DFS(val)
+                    DFS(val);
                 }
             }
-        }
-
-        DFS(strVtx);
+        })(strVtx);
 
         return list;
     }
+
+    // depthFirstRecursive(start) {
+    //     const result = [];
+    //     const visited = {};
+    //     const adjacencyList = this.adjecencyList;
+
+    //     (function dfs(vertex) {
+    //         if (!vertex) return null;
+    //         visited[vertex] = true;
+    //         result.push(vertex);
+    //         adjacencyList[vertex].forEach(neighbor => {
+    //             if (!visited[neighbor]) {
+    //                 return dfs(neighbor)
+    //             }
+    //         });
+    //     })(start);
+
+    //     return result;
+    // }
 }
 
 
@@ -73,7 +86,6 @@ list.addVertex("D")
 list.addVertex("E")
 list.addVertex("F")
 
-
 list.addEdge("A", "B")
 list.addEdge("A", "C")
 list.addEdge("B", "D")
@@ -81,8 +93,8 @@ list.addEdge("C", "E")
 list.addEdge("D", "E")
 list.addEdge("D", "F")
 list.addEdge("E", "F")
-console.log(list);
+//console.log(list);
 
-console.log(list.depthFirstTraversal("A"));
+console.log(list.depthFirstRecursive("A"));
 
 console.log(list);
