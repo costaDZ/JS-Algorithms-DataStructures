@@ -26,3 +26,4 @@ list.addEdge("C", "B", 8)
 list.addEdge("A", "C", 20)
 
 console.log(list);
+//t
