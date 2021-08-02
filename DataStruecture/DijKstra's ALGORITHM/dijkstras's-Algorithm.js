@@ -181,7 +181,6 @@ list.addEdge("E", "F", 1);
 
 console.log(list.shortestPath("A", "E"));
 
-////console.log(list);
 
 
 
