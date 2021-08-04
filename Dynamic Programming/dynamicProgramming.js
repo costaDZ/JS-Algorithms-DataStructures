@@ -10,4 +10,4 @@ function fib(n, memo = []) {
 }
 
 
-console.log(fib(90));
+console.log(fib(55));
