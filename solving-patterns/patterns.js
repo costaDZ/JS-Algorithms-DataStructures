@@ -3,48 +3,42 @@
 // return false if it's not
 
 
+// function check(arr1, arr2) {
+//     for (let n of arr1) {
+//         if (arr2.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
+//     }
+//     for (let n of arr2) {
+//         if (arr1.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
+//     }
+// }
+
+// console.log(check([3, 61, 2], [4, 5, 36, 1]));
+
+// function same(arr1, arr2) {
+//     //check if arr1 + arr2 have the same length
+//     if (arr1.length !== arr2.length) {
+//         return false
+//     }
+
+//     // make two new objects
+//     let obj1 = {};
+//     let obj2 = {};
+
+//     // add the arr1 values = keys && values = repetition
+//     // add the arr2 values = keys && values = repetition
+//     for (let n of arr1) { obj1[n] = (obj1[n] || 0) + 1; }
+//     for (let n of arr2) { obj2[n] = (obj2[n] || 0) + 1; }
+//     for (let n in obj1) {
+//         if (!(n ** 2 in obj2)) { return false; }
+//         if (obj2[n ** 2] !== obj1[n]) { return false; }
+//     }
+//     return true;
+// }
+
+// console.log(same([1, 2, 2], [4, 4, 1]));
 
 
-
-function check(arr1, arr2) {
-    for (let n of arr1) {
-        if (arr2.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
-    }
-    for (let n of arr2) {
-        if (arr1.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
-    }
-}
-
-console.log(check([3, 61, 2], [4, 5, 36, 1]));
-
-
-
-
-function same(arr1, arr2) {
-    //check if arr1 + arr2 have the same length
-    if (arr1.length !== arr2.length) {
-        return false
-    }
-
-    // make two new objects
-    let obj1 = {};
-    let obj2 = {};
-
-    // add the arr1 values = keys && values = repetition
-    // add the arr2 values = keys && values = repetition
-    for (let n of arr1) { obj1[n] = (obj1[n] || 0) + 1; }
-    for (let n of arr2) { obj2[n] = (obj2[n] || 0) + 1; }
-    for (let n in obj1) {
-        if (!(n ** 2 in obj2)) { return false; }
-        if (obj2[n ** 2] !== obj1[n]) { return false; }
-    }
-    return true;
-}
-
-
-console.log(same([1, 2, 2], [4, 4, 1]));
-
-//check if the arr1 + arr2 legth is equale
+//check if the arr1 + arr2 length is equale
 // if false return false
 
 // if true
@@ -56,7 +50,7 @@ console.log(same([1, 2, 2], [4, 4, 1]));
 
 
 
-// check if str2 is the anagram of the str1
+//check if str2 is the anagram of the str1
 // function anagram(str1, str2) {
 //     if (str1.length !== str2.length) {
 //         return false;
@@ -68,6 +62,7 @@ console.log(same([1, 2, 2], [4, 4, 1]));
 //     for (l of str1) { obj1[l] = (obj1[l] || 0) + 1; }
 //     for (l of str2) { obj2[l] = (obj2[l] || 0) + 1; }
 
+//     console.log(obj1, obj2);
 //     // check if each key has the same repetition in the second object
 //     for (let n in obj1) {
 //         if (!obj2.hasOwnProperty(n)) { return false; }
@@ -76,7 +71,7 @@ console.log(same([1, 2, 2], [4, 4, 1]));
 //     return true;
 // }
 
-// console.log(anagram('', ''));
+// console.log(anagram('abceafk', 'abcakfe'));
 
 
 /*======================================*/
@@ -87,8 +82,8 @@ console.log(same([1, 2, 2], [4, 4, 1]));
 //     let leftindex = 0;
 
 //     for (let n in arr) {
-
 //         let big = arr[arr.length - rightindex];
+
 //         let small = arr[leftindex];
 
 //         if (big + small > 0) { rightindex += 1; }
@@ -103,26 +98,25 @@ console.log(same([1, 2, 2], [4, 4, 1]));
 
 
 
-// function contUniqueValues(arr) {
-//     console.log(arr);
-//     if (arr.length === 0) return 0;
+function contUniqueValues(arr) {
+    if (arr.length === 0) return 0;
 
 
-//     // define a 2 empty variable (acc + result);
-//     let acc = arr[0];
-//     let result = 1;
-//     // set the first value to my var
-//     for (n of arr) {
-//         if (acc !== n) {
-//             result += 1;
-//             acc = n;
-//         }
-//     }
+    // define a 2 empty variable (acc + result);
+    let acc = arr[0];
+    let result = 1;
+    // set the first value to my var
+    for (n of arr) {
+        if (acc !== n) {
+            result += 1;
+            acc = n;
+        }
+    }
+    console.log(result);
+    return result;
+}
 
-//     return result;
-// }
-
-// contUniqueValues([2, 5, 3, 3, 3, 4])
+contUniqueValues([2, 5, 3, 3, 3, 4])
 
 
 
