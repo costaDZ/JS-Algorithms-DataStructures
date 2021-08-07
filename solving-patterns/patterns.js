@@ -4,31 +4,45 @@
 
 
 
-// function same(arr1, arr2) {
-//     //check if arr1 + arr2 have the same length
-//     if (arr1.length !== arr2.length) {
-//         return false
-//     }
-
-//     // make two new objects
-//     let obj1 = {};
-//     let obj2 = {};
-
-//     // add the arr1 values = keys && values = repetition
-//     // add the arr2 values = keys && values = repetition
-//     for (let n of arr1) { obj1[n] = (obj1[n] || 0) + 1; }
-//     for (let n of arr2) { obj2[n] = (obj2[n] || 0) + 1; }
-
-//     for (let n in obj1) {
-//         if (!(n ** 2 in obj2)) { return false; }
-//         if (obj2[n ** 2] !== obj1[n]) { return false; }
-//     }
-
-//     return true;
-// }
 
 
-// console.log(same([1, 2, 2], [4, 4, 1]));
+function check(arr1, arr2) {
+    for (let n of arr1) {
+        if (arr2.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
+    }
+    for (let n of arr2) {
+        if (arr1.includes(Math.sqrt(n))) return [true, Math.sqrt(n)];
+    }
+}
+
+console.log(check([3, 61, 2], [4, 5, 36, 1]));
+
+
+
+
+function same(arr1, arr2) {
+    //check if arr1 + arr2 have the same length
+    if (arr1.length !== arr2.length) {
+        return false
+    }
+
+    // make two new objects
+    let obj1 = {};
+    let obj2 = {};
+
+    // add the arr1 values = keys && values = repetition
+    // add the arr2 values = keys && values = repetition
+    for (let n of arr1) { obj1[n] = (obj1[n] || 0) + 1; }
+    for (let n of arr2) { obj2[n] = (obj2[n] || 0) + 1; }
+    for (let n in obj1) {
+        if (!(n ** 2 in obj2)) { return false; }
+        if (obj2[n ** 2] !== obj1[n]) { return false; }
+    }
+    return true;
+}
+
+
+console.log(same([1, 2, 2], [4, 4, 1]));
 
 //check if the arr1 + arr2 legth is equale
 // if false return false
