@@ -5,13 +5,13 @@
 
 // get the factorial of a number
 
-// function factorial(num) {  *****===> pure recurtion
+// function factorial(num) {  //*****===> pure recurtion
 //     if (num === 1) return 1;
 
 //     return num * factorial(num - 1);
-// }
 
-// console.log(factorial(5));
+// }
+// console.log(factorial(2));
 
 
 // function factorial(num) {  //*****===> helper recurtion 
@@ -31,12 +31,13 @@
 //     return result;
 // }
 
-// console.log(factorial(3));
+// console.log(factorial(4));
 
 
 /**********************************************/
 //Write a JavaScript program to find the greatest
 // common divisor (gcd) of two positive numbers
+
 
 // function devisor(a, b) {
 
@@ -81,15 +82,15 @@
 // console.log(devisor(8, 10));
 
 
-// var gcd = function (a, b) {
+var gcd = function (a, b) {
 
-//     if (!b) {
-//         return a;
-//     }
+    if (!b) {
+        return a;
+    }
 
-//     return gcd(b, a % b);
-// };
-// console.log(gcd(4, 8));
+    return gcd(b, a % b);
+};
+console.log(gcd(40, 80));
 
 /**********************************************/
 

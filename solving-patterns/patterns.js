@@ -98,25 +98,23 @@
 
 
 
-function contUniqueValues(arr) {
-    if (arr.length === 0) return 0;
+// function contUniqueValues(arr) {
+//     if (arr.length === 0) return 0;
 
-    // define a 2 empty variable (acc + result);
-    let acc = arr[0];
-    let result = 1;
-    // set the first value to my var
-    for (n of arr) {
-        if (acc !== n) {
-            result += 1;
-            acc = n;
-        }
-    }
-    return result;
-}
+//     // define a 2 empty variable (acc + result);
+//     let acc = arr[0];
+//     let result = 1;
+//     // set the first value to my var
+//     for (n of arr) {
+//         if (acc !== n) {
+//             result += 1;
+//             acc = n;
+//         }
+//     }
+//     return result;
+// }
 
-contUniqueValues([2, 5, 3, 3, 3, 4])
-
-
+// contUniqueValues([2, 5, 3, 3, 3, 4])
 
 // function contUniqueValues(arr) {
 //     let a = 0;
@@ -125,13 +123,13 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 //         if (arr[a] !== arr[i]) {
 //             a++;
 //             arr[a] = arr[i];
+
 //         }
 //     }
-
-//     console.log(a + 1);
+//     return a;
 // }
 
-// contUniqueValues([2, 2, 8])
+// contUniqueValues([2, 2, 8, 5, 7, 9, 8, 9])
 
 
 /*======================================*/
@@ -140,7 +138,6 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 // get a num and check in the arr for
 //the chain involve that num can give us the max num
 
-//
 
 // function maxSum(arr, num) {
 //     // craet the first sum variable the window
@@ -156,11 +153,10 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 //         acc = acc - arr[j - num] + arr[j];
 //         if (acc > result) { result = acc; }
 //     }
-
-//     console.log(result);
+//     return result;
 // }
 
-// maxSum([2, 6, 9, 2, 1], 3); // =========> O(n) good solutio [linear]
+// maxSum([2, 6, 5, 1], 3); // =========> O(n) good solutio [linear]
 
 
 
@@ -231,20 +227,23 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 //====================//
 
 // function uniqueValues(arr) {
-
 //     let pointer1 = 0;
 //     let pointer2 = pointer1 + 1;
 //     let result = 0;
 //     while (pointer1 < arr.length) {
 //         if (arr[pointer1] !== arr[pointer2]) {
 //             result++;
-//             pointer1++;
+//             pointer1 = pointer2;
+//             pointer2++;
+//         } else {
+//             pointer2++;
 //         }
-//         pointer1++;
+
 //     }
 //     console.log(result);
 // }
-// console.log(uniqueValues([-1, 0, 1, 2, 2, 5, 5, 6, 8]));
+// console.log(uniqueValues([1, 2, 3, 3, 4, 8, 8, 8]));
+
 
 
 //====================//
@@ -257,6 +256,7 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 //             result.push(arr.slice(i, num + i));
 //         }
 //     }
+//     console.log(result);
 
 //     let finalResult = result.reduce((acc, val) => {
 //         let valSum = val.reduce((acc, n) => acc += n, 0);
@@ -270,7 +270,7 @@ contUniqueValues([2, 5, 3, 3, 3, 4])
 //     console.log(finalResult);
 // }
 
-// maxSum([2, 6, 9, 2, 1, 5, 14], 5); // =========> O(n) good solutio [linear]
+// maxSum([2, 6, 9, 2, 1, 5, 14], 2); // =========> bad solution
 
 
 // function maxSum(arr, num) {
