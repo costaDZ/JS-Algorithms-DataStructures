@@ -101,7 +101,6 @@
 function contUniqueValues(arr) {
     if (arr.length === 0) return 0;
 
-
     // define a 2 empty variable (acc + result);
     let acc = arr[0];
     let result = 1;
@@ -112,7 +111,6 @@ function contUniqueValues(arr) {
             acc = n;
         }
     }
-    console.log(result);
     return result;
 }
 
