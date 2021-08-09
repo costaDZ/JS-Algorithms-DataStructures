@@ -111,18 +111,14 @@
 // }
 // console.log(integers(2, 9));
 
-function integers(a, b) {
+// function integers(a, b) {
+//     let result = [];
+//     if (a === b) return b;
+//     result.push(a);
+//     return result.concat(integers(a + 1, b));
+// }
 
-    let result = [];
-
-    if (a === b) return b;
-    result.push(a);
-
-    integers(a + 1, b);
-
-    return result;
-}
-console.log(integers(2, 9));
+// console.log(integers(2, 9));
 
 
 /**********************************************/
@@ -131,6 +127,18 @@ console.log(integers(2, 9));
 
 
 
+function sum(arr) {
+    let result = 0;
+
+    //debugger;
+
+    if (arr.length === 0) return;
+
+    sum(arr);
+
+    return result;
+}
+//console.log(sum([2, 9, 3, 4]));
 
 
 
