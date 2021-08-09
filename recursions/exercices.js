@@ -82,15 +82,15 @@
 // console.log(devisor(8, 10));
 
 
-var gcd = function (a, b) {
+// let gcd = function (a, b) {
 
-    if (!b) {
-        return a;
-    }
+//     if (!b) {
+//         return a;
+//     }
 
-    return gcd(b, a % b);
-};
-console.log(gcd(40, 80));
+//     return gcd(b, a % b);
+// };
+// console.log(gcd(40, 80));
 
 /**********************************************/
 
@@ -111,8 +111,33 @@ console.log(gcd(40, 80));
 // }
 // console.log(integers(2, 9));
 
+function integers(a, b) {
+
+    let result = [];
+
+    if (a === b) return b;
+    result.push(a);
+
+    integers(a + 1, b);
+
+    return result;
+}
+console.log(integers(2, 9));
+
+
 /**********************************************/
 //4. Write a JavaScript program to compute the sum of an array of integers
+
+
+
+
+
+
+
+
+
+
+
 
 // function sum(arr) {
 //     let index = 0;
