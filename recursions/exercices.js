@@ -124,39 +124,21 @@
 /**********************************************/
 //4. Write a JavaScript program to compute the sum of an array of integers
 
-
-
-
-function sum(arr) {
-    let result = 0;
-
-    //debugger;
-
-    if (arr.length === 0) return;
-
-    sum(arr);
-
-    return result;
-}
-//console.log(sum([2, 9, 3, 4]));
-
-
-
-
-
-
-
-
 // function sum(arr) {
+//     let result = arr[0];
+//     debugger;
+//     if (arr.length === 0) return 0;
+//     return result + sum(arr.slice(1));
+// }
+// console.log(sum([2, 2, 5, 4]));
+
+// function sum1(arr) {
 //     let index = 0;
 //     let result = arr[0];
-
 //     if (arr.length === 0) return 0;
-
-//     return result + sum(arr.slice(index + 1));
+//     return result + sum1(arr.slice(index + 1));
 // }
-
-// console.log(sum([1]));
+// console.log(sum1([2, 2, 3, 4]));
 
 
 // function sum(arr) {
@@ -164,17 +146,36 @@ function sum(arr) {
 //     return arr.pop() + sum(arr);
 // }
 
-// console.log(sum([1, 5]));
+// console.log(sum([1, 5, 6]));
 
 /**********************************************/
 // //5. Write a JavaScript program to compute the exponent of a number.
+
+
+// function exponent(n, exp) {
+
+//     let result = 0;
+
+//     console.log(n);
+//     if (exp <= 1) return;
+
+
+//     result + exponent(n ** exp, exp - 1)
+
+//     return result;
+
+// }
+
+// console.log(exponent(2, 3));
+
+
 
 // function exponent(a, b) {
 
 //     //  let expo = num;
 
 //     if (b === 0) { return 1 };
-
+//     //debugger;
 //     //console.log(expo);
 
 //     return a * exponent(a, b - 1);
@@ -187,12 +188,16 @@ function sum(arr) {
 /**********************************************/
 
 //6. Write a JavaScript program to get the first (n) Fibonacci numbers.
+
+
 // function fibo(num) {
 //     if (num === 0) return [0, 1];
 //     let s = fibo(num - 1);
 //     s.push(s[s.length - 1] + s[s.length - 2])
 //     return s;
 // }
+
+
 // console.log(fibo(8));
 
 // /------------------------------------/
@@ -352,3 +357,26 @@ function sum(arr) {
 // // // }
 
 // // // console.log(findFibonacci(5));
+
+
+
+
+
+
+
+/********************/
+
+//Write a function that accepts a string a reverses it. Recursively.
+
+function reverce(str) {
+
+    let result = "";
+
+    if (str.length === 0) return result;
+
+    return result += reverce(str.substring(str.length, str.length - 1));
+
+    // return  str;
+}
+
+console.log(reverce("abcde"));
