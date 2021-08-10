@@ -365,3 +365,28 @@ This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
 Exercise 5 - String Splitter
 Split a string based upon a separator (similar to String.prototype.split).
 */
+
+
+// function split(str, separator) {
+
+//     let result = [];
+//     let idx = str.indexOf(separator);
+
+//     if (idx === -1) return str;
+
+//     result.push(str.substr(0, idx));
+
+//     return result.concat(split(str.slice(idx + separator.length), separator));
+
+// }
+
+// console.log(split("ab*c*defh*hi*y*y////dsfsdf/sdfs/sdf", '////'));
+
+
+// function split(str, sep) {
+//     var idx = str.indexOf(sep);
+//     if (idx == -1)
+//         return [str];
+//     return [str.slice(0, idx)].concat(split(str.slice(idx + sep.length), sep))
+// }
+// console.log(split('1/12/2017', '/'));
