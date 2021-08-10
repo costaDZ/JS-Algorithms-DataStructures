@@ -234,86 +234,6 @@
 // }
 // console.log(checkEven(24));
 
-
-/**********************************************/
-//8. Write a JavaScript program for binary search
-
-// function binarySearch(arr, target) {
-
-//     if (arr.length === 0) return;
-
-//     let start = 0;
-//     let end = arr.length - 1;
-//     let middle = Math.floor((start + end) / 2);
-
-//     for (let n in arr) {
-
-//         if (arr[middle] > target) {
-//             end = middle - 1;
-//             middle = Math.floor((start + end) / 2)
-//         }
-//         if (arr[middle] < target) {
-//             start = middle + 1;
-//             middle = Math.floor((start + end) / 2)
-//         }
-
-//         if (arr[middle] === target) {
-//             return middle;
-//         }
-//     }
-
-// }
-
-// console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 48, 55], 55));
-
-
-// srach about a target in an array using binary search + recurtion
-// binary search mean i will devide the arr by 2 equal sizes
-// and look at the value for both of theme
-// if the value it's in the first section i will cut the seconde and vers versa
-// finaly when i find the value i will return it else i will return -1
-
-// function binarySearch(arr, target) {
-
-//     // set the start point
-//     let start = 0;
-//     // set the end point
-//     let end = arr.length - 1;
-//     // set the middle point
-//     let middle = Math.floor((start + end) / 2);
-//     let result;
-
-//     //set a helper function
-//     function helper(arr) {
-//         console.log(arr[middle], start);
-//         if (arr[middle] === target || arr[end] === target || arr[start] === target) {
-//             result = target;
-//             return;
-//         }
-//         // set the base case if (arr.length === 0) return -1;
-//         if (start === middle && middle !== target) {
-//             result = -1;
-//             return;
-//         }
-//         //check if the arr[middle point] or arr[start point] or arr[end point]  > or < (target)
-//         if (arr[middle] > target) {
-//             end = middle;
-//             middle = Math.floor((start + end) / 2);
-//             helper(arr);
-//         }
-//         if (arr[middle] < target) {
-//             console.log(true);
-//             start = middle;
-//             middle = Math.floor((start + end) / 2);
-//             helper(arr);
-//         }
-//     }
-//     helper(arr);
-//     return result;
-// }
-
-// console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 28, 44], 44));
-
 /*******************************************/
 
 //Find the sum of a sequence of numbers recursively.
@@ -368,15 +288,80 @@
 
 //Write a function that accepts a string a reverses it. Recursively.
 
-function reverce(str) {
+// function reverce(str) {
+//     let result = [];
+//     if (str.length === 0) return "";
 
-    let result = "";
+//     result = str[0];
+//     return reverce(str.slice(1)) + result;
+// }
 
-    if (str.length === 0) return result;
+// console.log(reverce("abcde"));
 
-    return result += reverce(str.substring(str.length, str.length - 1));
 
-    // return  str;
-}
+// function map(target) {
+//     let result = [];
+//     if (target.length === 0) return result;
+//     result.push(target[0]);
+//     return result.concat(map(target.slice(1)));
+// }
 
-console.log(reverce("abcde"));
+// console.log(map(["a", "b", "c"]));
+
+
+
+// Write a program that takes an array as input which contains an unknown set of numbers,
+// and output an array which doubles the values of each item in that array.
+// Test your solution by trying a handful of different arrays.
+
+
+// function double_all(arr) {
+//     if (!arr.length) {
+//         return [];
+//     }
+//     return [arr[0] * 2, ...double_all(arr.slice(1))];
+// }
+
+// console.log(double_all([1, 2, 4, 5, 3, 5, 9]));
+
+/*=================================================================================
+Exercise 4 - Triangular Number
+Calculates the nth triangular number.
+A triangular number counts the objects that can form an equilateral triangle.
+The nth triangular number is the number of dots composing a triangle with n dots on a side,
+and is equal to the sum of the n natural numbers from 1 to n.
+This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
+                          *
+            *           *    *
+*     |   *   *  |   *    *    *  |
+ 1st     2nd             3rd             nth?
+*/
+//Should always return n*(n+1)/2
+
+// function Triangular(num) {
+
+//     let result = [];
+
+//     if (num === 0) return [];
+
+//     result.push(num * (num + 1) / 2);
+
+//     return Triangular(num - 1).concat(result);
+
+// }
+
+// console.log(Triangular(15));
+
+// function triangle(n) {
+//     if (n < 2)
+//         return n;
+//     return n + triangle(n - 1);
+// }
+
+// console.log(triangle(8));
+
+
+/*=================================================================================
+Exercise 5 - String Splitter
+Split a string based upon a separator (similar to String.prototype.split).
+*/

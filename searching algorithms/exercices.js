@@ -118,3 +118,83 @@
 // }
 
 // console.log(binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 546));
+
+
+/**********************************************/
+//8. Write a JavaScript program for binary search
+
+// function binarySearch(arr, target) {
+
+//     if (arr.length === 0) return;
+
+//     let start = 0;
+//     let end = arr.length - 1;
+//     let middle = Math.floor((start + end) / 2);
+
+//     for (let n in arr) {
+
+//         if (arr[middle] > target) {
+//             end = middle - 1;
+//             middle = Math.floor((start + end) / 2)
+//         }
+//         if (arr[middle] < target) {
+//             start = middle + 1;
+//             middle = Math.floor((start + end) / 2)
+//         }
+
+//         if (arr[middle] === target) {
+//             return middle;
+//         }
+//     }
+
+// }
+
+// console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 48, 55], 55));
+
+
+// srach about a target in an array using binary search + recurtion
+// binary search mean i will devide the arr by 2 equal sizes
+// and look at the value for both of theme
+// if the value it's in the first section i will cut the seconde and vers versa
+// finaly when i find the value i will return it else i will return -1
+
+// function binarySearch(arr, target) {
+
+//     // set the start point
+//     let start = 0;
+//     // set the end point
+//     let end = arr.length - 1;
+//     // set the middle point
+//     let middle = Math.floor((start + end) / 2);
+//     let result;
+
+//     //set a helper function
+//     function helper(arr) {
+//         console.log(arr[middle], start);
+//         if (arr[middle] === target || arr[end] === target || arr[start] === target) {
+//             result = target;
+//             return;
+//         }
+//         // set the base case if (arr.length === 0) return -1;
+//         if (start === middle && middle !== target) {
+//             result = -1;
+//             return;
+//         }
+//         //check if the arr[middle point] or arr[start point] or arr[end point]  > or < (target)
+//         if (arr[middle] > target) {
+//             end = middle;
+//             middle = Math.floor((start + end) / 2);
+//             helper(arr);
+//         }
+//         if (arr[middle] < target) {
+//             console.log(true);
+//             start = middle;
+//             middle = Math.floor((start + end) / 2);
+//             helper(arr);
+//         }
+//     }
+//     helper(arr);
+//     return result;
+// }
+
+// console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 28, 44], 44));
