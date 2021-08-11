@@ -400,21 +400,20 @@ For example the program should take 3 as an input and print 11 as output, or 25 
 and print 11001 as an output. Note that the binary representation of 0 should be 0.
 */
 
+// function toBinary(n) {
+//     if (n === 0) return "";
+//     let binary = n % 2;
+//     return toBinary(Math.floor(n / 2)) + binary;
+// }
+// console.log(toBinary(223));
 
-function toBinary(n) {
 
-    let result = "";
-
-    // if (n === 0 && !result) return 0;
-    //  if (n === 0) return result;
-
-
-    //  result.push(n % 2);
-    // console.log(result);
-    result += n % 2;
-
-    //return toBinary(Math.floor(n / 2)) + result;
-
-}
-
-console.log(toBinary(-2));
+// function convertToBinary(num) {
+//     if (num > 0) {
+//         let binary = Math.floor(num % 2);
+//         return (convertToBinary(Math.floor(num / 2)) + binary);
+//     } else {
+//         return '';
+//     }
+// }
+// console.log(convertToBinary(223));
