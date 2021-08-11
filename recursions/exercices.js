@@ -334,7 +334,7 @@ This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
                           *
             *           *    *
 *     |   *   *  |   *    *    *  |
- 1st     2nd             3rd             nth?
+1st       2nd             3rd             nth?
 */
 //Should always return n*(n+1)/2
 
@@ -353,12 +353,13 @@ This is the Triangular Number Sequence: 1, 3, 6, 10, 15, 21, 28, 36, 45
 // console.log(Triangular(15));
 
 // function triangle(n) {
-//     if (n < 2)
-//         return n;
+//     if (n < 2) return n;
+
+//     console.log(n);
 //     return n + triangle(n - 1);
 // }
 
-// console.log(triangle(8));
+// console.log(triangle(5));
 
 
 /*=================================================================================
@@ -380,7 +381,7 @@ Split a string based upon a separator (similar to String.prototype.split).
 
 // }
 
-// console.log(split("ab*c*defh*hi*y*y////dsfsdf/sdfs/sdf", '////'));
+// console.log(split("ab*c*defh*hi*y*y", '*'));
 
 
 // function split(str, sep) {
@@ -390,3 +391,30 @@ Split a string based upon a separator (similar to String.prototype.split).
 //     return [str.slice(0, idx)].concat(split(str.slice(idx + sep.length), sep))
 // }
 // console.log(split('1/12/2017', '/'));
+
+
+/*=================================================================================
+Exercise 6 - Binary Representation
+Write a recursive function that prints out the binary representation of a given number.
+For example the program should take 3 as an input and print 11 as output, or 25 as an input
+and print 11001 as an output. Note that the binary representation of 0 should be 0.
+*/
+
+
+function toBinary(n) {
+
+    let result = "";
+
+    // if (n === 0 && !result) return 0;
+    //  if (n === 0) return result;
+
+
+    //  result.push(n % 2);
+    // console.log(result);
+    result += n % 2;
+
+    //return toBinary(Math.floor(n / 2)) + result;
+
+}
+
+console.log(toBinary(-2));
