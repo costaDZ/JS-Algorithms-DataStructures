@@ -291,20 +291,20 @@
 /*=========================*/
 
 
-function bubbleSort1(arr) {
-    let noSwap;
-    for (let i = arr.length - 1; i >= 0; i--) {
-        noSwap = true;
-        for (let j = 0; j < i; j++) {
-            if (arr[j] > arr[j + 1]) {
-                swap(arr, j, j + 1);
-                noSwap = false;
-            }
-        }
-        if (noSwap) break;
-    }
-    return arr;
-}
+// function bubbleSort1(arr) {
+//     let noSwap;
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         noSwap = true;
+//         for (let j = 0; j < i; j++) {
+//             if (arr[j] > arr[j + 1]) {
+//                 swap(arr, j, j + 1);
+//                 noSwap = false;
+//             }
+//         }
+//         if (noSwap) break;
+//     }
+//     return arr;
+// }
 
 function swap(arr, idx1, idx2) {
     let temp = arr[idx1];
@@ -313,9 +313,36 @@ function swap(arr, idx1, idx2) {
 }
 
 
-console.log(bubbleSort1([2, 1, 9, 76, 4, 85, 1000, 10, 2, 3]));
+//console.log(bubbleSort1([2, 1, 9, 76, 4, 85, 1000, 10, 2, 3]));
 
 
 /*=========================*/
 //** selection sorting **//
 /*=========================*/
+// function selectionSort1(arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         let smallest = i;
+//         for (let j = i; j < arr.length; j++) {
+//             if (arr[j] < arr[smallest]) smallest = j;
+//         }
+//         if (i !== smallest) swap(arr, i, smallest);
+//     }
+//     return arr;
+// }
+// console.log(selectionSort1([2, 9, 9, 76, 4, 1, 85]));
+
+/*=========================*/
+//** insertion sorting **//
+/*=========================*/
+
+// function insertionSort(arr) {
+//     for (let i = 1; i < arr.length; i++) {
+//         let target = arr[i];
+//         for (let j = i - 1; j >= 0 && arr[j] > target; j--) {
+//             swap(arr, j, j + 1)
+//         }
+//     }
+//     return arr;
+// }
+
+// console.log(insertionSort([8, 3, 4, 2, 1, 0, 5, 55, 1.5]));
