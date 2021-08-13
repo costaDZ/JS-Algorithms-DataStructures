@@ -274,5 +274,48 @@
 //     }
 //     return arr;
 // }
-
 // insertionSort([2, 1, 9, 76, 4])
+
+
+
+
+
+
+
+
+
+
+
+/*=========================*/
+//** bubble sorting **//
+/*=========================*/
+
+
+function bubbleSort1(arr) {
+    let noSwap;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        noSwap = true;
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1);
+                noSwap = false;
+            }
+        }
+        if (noSwap) break;
+    }
+    return arr;
+}
+
+function swap(arr, idx1, idx2) {
+    let temp = arr[idx1];
+    arr[idx1] = arr[idx2];
+    arr[idx2] = temp;
+}
+
+
+console.log(bubbleSort1([2, 1, 9, 76, 4, 85, 1000, 10, 2, 3]));
+
+
+/*=========================*/
+//** selection sorting **//
+/*=========================*/
