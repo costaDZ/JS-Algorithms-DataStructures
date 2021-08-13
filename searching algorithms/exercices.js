@@ -198,3 +198,44 @@
 // }
 
 // console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 28, 44], 44));
+
+
+
+
+
+
+//======================================================//
+
+
+
+// function binarySearch(arr, target) {
+//     let leftIdx = 0;
+//     let rightIdx = arr.length - 1;
+//     let middleIdx = Math.floor((leftIdx + rightIdx) / 2);
+//     while (arr[middleIdx] !== target && leftIdx !== rightIdx) {
+//         if (target > arr[middleIdx]) leftIdx = middleIdx + 1;
+//         else rightIdx = middleIdx - 1;
+//         middleIdx = Math.floor((leftIdx + rightIdx) / 2);
+//     }
+//     return target === arr[middleIdx] ? middleIdx : -1;
+// }
+
+// console.log(binarySearch([0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 28, 44], 7));
+
+
+// function findString(str, target) {
+//     let counter = 0;
+
+//     for (let i = 0; i < str.length; i++) {
+//         let collect = "";
+//         for (char2 of target) {
+//             if (str[i] !== char2) break;
+//             collect += str[i];
+//             i++;
+//             if (collect === target) counter++;
+//         }
+//     }
+//     return counter;
+// }
+
+// console.log(findString("al in al al alalal bla al bla ", "bla"));

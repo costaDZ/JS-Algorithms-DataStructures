@@ -441,7 +441,3 @@ Continue this way until you find all the anagrams for east. There should be 24 o
 // }
 
 // console.log(getAnagram("east"));
-
-
-//setInterval function
-//c
