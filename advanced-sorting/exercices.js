@@ -316,3 +316,73 @@
 /*=========================*/
 //** Quik  sort **//
 /*=========================*/
+
+
+// function quikSort(arr, left = 0, right = arr.length - 1) {
+
+//     if (left < right) {
+//         let pivotItem = pivot(arr, left, right);
+//         quikSort(arr, left, pivotItem - 1);
+//         quikSort(arr, pivotItem + 1, right);
+
+//     }
+//     return arr;
+// }
+
+
+// console.log(quikSort([4, 2, 5, 3, 1, 6, 8, 7]));
+
+// function pivot(arr, start = 0, end = arr.length - 1) {
+//     let pivot = arr[start];
+//     let currentPivotIdx = start;
+//     for (let i = start + 1; i <= end; i++) {
+//         if (pivot > arr[i]) {
+//             currentPivotIdx++;
+//             [arr[currentPivotIdx], arr[i]] = [arr[i], arr[currentPivotIdx]]
+//         }
+//     }
+//     [arr[currentPivotIdx], arr[start]] = [arr[start], arr[currentPivotIdx]]
+//     return currentPivotIdx;
+// }
+
+// console.log(pivot([4, 2, 5, 3, 1, 6, 8, 7], 0));
+
+
+
+/*=========================*/
+//** Radix  sort **//
+/*=========================*/
+
+
+
+// function getDigit(num, i) {
+//     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
+// }
+
+// function digitCount(num) {
+//     if (num === 0) return 1;
+//     return Math.floor(Math.log10(Math.abs(num))) + 1;
+// }
+
+// function mostDigits(nums) {
+//     let maxDigits = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         maxDigits = Math.max(maxDigits, digitCount(nums[i]));
+//     }
+//     return maxDigits;
+// }
+
+// function radixSort(nums) {
+//     let maxDigitCount = mostDigits(nums);
+//     for (let k = 0; k < maxDigitCount; k++) {
+//         let digitBuckets = Array.from({ length: 10 }, () => []);
+//         for (let i = 0; i < nums.length; i++) {
+//             let digit = getDigit(nums[i], k);
+//             digitBuckets[digit].push(nums[i]);
+//         }
+//         nums = [].concat(...digitBuckets);
+//     }
+//     return nums;
+// }
+
+// console.log(radixSort([445, 212, 55, 3, 14, 64522, 84, 7]));
