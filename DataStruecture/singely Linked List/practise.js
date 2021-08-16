@@ -4,10 +4,7 @@ class Node {
         this.next = null;
     }
 }
-
-
 class SinglyLinkdeList {
-
     constructor() {
         this.head = null;
         this.tail = null;
@@ -36,7 +33,6 @@ class SinglyLinkdeList {
 
     pop() {
         if (!this.length) return undefined;
-
         let currentNode = this.head;
         let newTail = currentNode;
 
@@ -102,18 +98,44 @@ class SinglyLinkdeList {
         if (index > this.length + 1 || !this.length || index < 0) return null;
         if (index === this.length) return this.pop();
         if (index === 0) return this.shift();
-
         let currentNode = this.get(index);
         let prev = this.get(index - 1);
         let next = currentNode.next;
-
         prev.next = next;
         this.length--;
         return currentNode;
-
-        console.log(currentNode);
     }
 
+    reverse() {
+
+        let node = this.head;
+        this.head = this.tail;
+        this.tail = node;
+
+
+        //  console.log(node);
+
+        let i = 0;
+        let next;
+        let prev = null;
+
+        debugger;
+        while (i < this.length) {
+            console.log("==========> node ", node);
+            console.log("==========> next ", next);
+            console.log("==========> prev ", prev);
+            console.log("********************");
+
+            next = node.next;
+            node.next = prev;
+            prev = node;
+            node = next;
+
+            i++;
+        }
+
+
+    }
 
 
 
@@ -132,7 +154,7 @@ list.push("4");
 // console.log(list.remove(0));
 // console.log(list.remove(0));
 
-
+console.log(list.reverse());
 
 // list.unshift("0");
 // list.unshift("-1");
