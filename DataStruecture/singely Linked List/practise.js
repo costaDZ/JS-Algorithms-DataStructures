@@ -14,7 +14,6 @@ class SinglyLinkdeList {
         this.length = null;
     }
 
-
     push(val) {
         let newNode = new Node(val);
         if (!this.length) {
@@ -38,28 +37,85 @@ class SinglyLinkdeList {
     pop() {
         if (!this.length) return undefined;
 
+        let currentNode = this.head;
+        let newTail = currentNode;
 
+        while (currentNode.next) {
+            newTail = currentNode;
+            currentNode = currentNode.next;
+        }
+        this.tail = newTail;
+        this.tail.next = null;
+        this.length--;
+        if (this.length === 0) {
+            this.head = null;
+            this.tail = null;
+        }
+        return currentNode;
+    }
+
+    shift() {
+        if (!this.length) return undefined;
+        let target = this.head;
+        let rest = this.head.next;
+        this.head = rest;
+        this.length--;
+        if (this.length === 0) this.tail = null;
+        target.next = null;
+        return target;
+    }
+
+    get(index) {
+        if (index > this.length || !this.length || index < 0) return null;
         let currentNode = this.head;
         let i = 0;
-
-
-        while (i < this.length - 1) {
-
-            console.log(currentNode);
+        while (i !== index) {
             currentNode = currentNode.next;
-
-            if (currentNode.next === this.tail) {
-                console.log(true);
-                currentNode.next = null
-            }
-
+            i++;
         }
-
-
-        //  console.log(currentNode);
-
-
+        return currentNode;
     }
+
+
+    set(index, val) {
+        if (index >= this.length || index < 0) return false;
+        let targetVal = this.get(index);
+        targetVal.val = val;
+        return targetVal;
+    }
+
+    insert(index, val) {
+        if (index > this.length + 1 || !this.length || index < 0) return null;
+        if (index === this.length) return this.push(val);
+        if (index === 0) return this.unshift(val);
+        let newNode = new Node(val);
+        let currentNode = this.get(index - 1);
+        let nextNodes = currentNode.next;
+        currentNode.next = newNode;
+        newNode.next = nextNodes;
+        this.length++;
+        return this;
+    }
+
+
+    remove(index) {
+        if (index > this.length + 1 || !this.length || index < 0) return null;
+        if (index === this.length) return this.pop();
+        if (index === 0) return this.shift();
+
+        let currentNode = this.get(index);
+        let prev = this.get(index - 1);
+        let next = currentNode.next;
+
+        prev.next = next;
+        this.length--;
+        return currentNode;
+
+        console.log(currentNode);
+    }
+
+
+
 
 }
 
@@ -69,18 +125,35 @@ list.push("1");
 list.push("2");
 list.push("3");
 list.push("4");
+// list.push("5");
+// list.push("6");
+// console.log(list.remove(2));
+// console.log(list.remove(0));
+// console.log(list.remove(0));
+// console.log(list.remove(0));
+
+
 
 // list.unshift("0");
 // list.unshift("-1");
 // list.unshift("-2");
 
-console.log(list.pop());
 // console.log(list.pop());
 // console.log(list.pop());
 // console.log(list.pop());
-// console.log(list.pop());
+
+// console.log(list.shift());
+// console.log(list.shift());
+// console.log(list.shift());
+
+
 // console.log(list);
-// console.log(list.pop());
+
+
+
+//console.log(list.get(0));
+//console.log(list.insert(2, "//"));
+
 
 
 
