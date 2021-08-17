@@ -169,39 +169,39 @@
 
 
 
-// let list = new SinglyLinkdeList();
+// // let list = new SinglyLinkdeList();
 
-// list.push("1");
-// list.push("2");
-// list.push("3");
-// list.push("4");
-// // list.push("5");
-// // list.push("6");
-// // list.push("7");
-// // list.push("8");
-// // list.push("9");
-// // list.push("10");
-// // list.push("11");
-
-
+// // list.push("1");
+// // list.push("2");
+// // list.push("3");
+// // list.push("4");
+// // // list.push("5");
+// // // list.push("6");
+// // // list.push("7");
+// // // list.push("8");
+// // // list.push("9");
+// // // list.push("10");
+// // // list.push("11");
 
 
 
-// // list.pop();
-// // list.pop();
-// // list.pop();
 
-// // list.unshift("111111");
 
-// // console.log(list.get(0));
-// //list.unshift("000000");
+// // // list.pop();
+// // // list.pop();
+// // // list.pop();
 
-// //console.log(list.set(1, '22222'));
+// // // list.unshift("111111");
 
-// //console.log(list.insert(0, 'test'));
+// // // console.log(list.get(0));
+// // //list.unshift("000000");
 
-// //console.log(list.remove(3));
+// // //console.log(list.set(1, '22222'));
 
-// console.log(list.reverse());
+// // //console.log(list.insert(0, 'test'));
 
-// console.log(list);
+// // //console.log(list.remove(3));
+
+// // console.log(list.reverse());
+
+// // console.log(list);
