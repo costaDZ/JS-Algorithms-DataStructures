@@ -135,7 +135,6 @@
 // // console.log(list.remove(2));
 // // console.log(list.remove(0));
 // // console.log(list.remove(0));
-// // console.log(list.remove(0));
 
 // console.log(list.reverse());
 
