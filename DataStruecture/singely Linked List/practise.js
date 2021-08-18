@@ -136,10 +136,10 @@
 // // console.log(list.remove(0));
 // // console.log(list.remove(0));
 
-// console.log(list.reverse());
 
 // // list.unshift("0");
 // // list.unshift("-1");
+
 // // list.unshift("-2");
 
 // // console.log(list.pop());
