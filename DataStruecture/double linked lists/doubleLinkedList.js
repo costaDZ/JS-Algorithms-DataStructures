@@ -256,6 +256,54 @@ class DoubleLinkedList {
         this.length--;
         return currentTail;
     }
+
+
+    shift() {
+        if (this.length === 0) return undefined;
+        let currentHead = this.head;
+        if (this.length === 1) {
+            this.pop();
+        } else {
+            this.head = currentHead.next;
+            this.head.prev = null;
+            currentHead.next = null;
+            this.length--;
+        }
+        return currentHead;
+    }
+
+    unshift(val) {
+        if (!this.length) return this.push(val);
+        let newNode = new Node(val);
+        let currentHead = this.head;
+        this.head = newNode;
+        newNode.next = currentHead;
+        currentHead.prev = this.head;
+        this.length++;
+        return this;
+    }
+
+    get(index) {
+        if (index < 0 || index > this.length - 1) return null;
+
+        let lastNode = this.tail;
+        let firstNode = this.head;
+        let middle = (this.length - 1) / 2
+        let s = this.length - 1;
+        let i = 0;
+
+        while (s > 0 && i < this.length - 1) {
+            if (index > middle) {
+                if (s === index) return lastNode;
+                lastNode = lastNode.prev;
+                s--;
+            } else {
+                if (i === index) return firstNode;
+                firstNode = firstNode.next;
+                i++;
+            }
+        }
+    }
 }
 
 
@@ -266,11 +314,19 @@ console.log(list.push("1"));
 console.log(list.push("2"));
 console.log(list.push("3"));
 console.log(list.push("4"));
-console.log(list.push("5"));
+// console.log(list.push("5"));
 
-console.log(list.pop());
-console.log(list.pop());
-console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.pop());
+// console.log(list.shift());
+
+// console.log(list.unshift(0));
+// console.log(list.unshift(-1));
+// console.log(list.unshift(-2));
+console.log(list.get(4));
+
+
+
 
 
 console.log(list);
