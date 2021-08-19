@@ -286,23 +286,60 @@ class DoubleLinkedList {
     get(index) {
         if (index < 0 || index > this.length - 1) return null;
 
-        let lastNode = this.tail;
-        let firstNode = this.head;
-        let middle = (this.length - 1) / 2
-        let s = this.length - 1;
-        let i = 0;
+        let count, current;
+        let middle = (this.length - 1) / 2;
 
-        while (s > 0 && i < this.length - 1) {
-            if (index > middle) {
-                if (s === index) return lastNode;
-                lastNode = lastNode.prev;
-                s--;
-            } else {
-                if (i === index) return firstNode;
-                firstNode = firstNode.next;
-                i++;
+        if (index < middle) {
+            current = this.head;
+            count = 0;
+            while (count !== index) {
+                current = current.next;
+                count++;
+            }
+        } else {
+            current = this.tail;
+            count = this.length - 1;
+            while (count !== index) {
+                current = current.prev;
+                count--;
             }
         }
+        return current;
+    }
+
+    set(index, val) {
+        let targetNode = this.get(index);
+        if (targetNode) {
+            targetNode.value = val;
+            return true;
+        }
+        return undefined;
+    }
+
+    insert(index, val) {
+        if (index < 0 || index > this.length - 1) return null;
+        if (index === 0) return this.shift(val);
+        if (index === this.length - 1) return this.push(val);
+        let targetNode = this.get(index - 1);
+        let nextNodes = targetNode.next;
+        targetNode.next = new Node(val);
+        targetNode.next.prev = targetNode;
+        targetNode.next.next = nextNodes;
+        targetNode.next.next.prev = targetNode.next;
+        this.length++;
+        return this;
+    }
+
+    remove(index) {
+        if (index === 0) return this.shift();
+        if (index === this.length - 1) return this.pop();
+        let target = this.get(index);
+        let prevNodes = target.prev;
+        let nextNodes = target.next;
+        prevNodes.next = nextNodes;
+        nextNodes.prev = prevNodes;
+        this.length--;
+        return target;
     }
 }
 
@@ -323,7 +360,16 @@ console.log(list.push("4"));
 // console.log(list.unshift(0));
 // console.log(list.unshift(-1));
 // console.log(list.unshift(-2));
-console.log(list.get(4));
+//console.log(list.get(3));
+
+//console.log(list.insert(2, "test"));
+
+//console.log(list.set(2, "ttt"));
+
+
+// console.log(list.remove(0));
+// console.log(list.remove(1));
+console.log(list.remove(2));
 
 
 
