@@ -48,10 +48,10 @@
 // console.log(list.enqueue("1111"));
 // console.log(list.enqueue("2222"));
 
-// console.log(list.dequeue());
-// console.log(list.dequeue());
-// console.log(list.dequeue());
-// console.log(list.dequeue());
+// // console.log(list.dequeue());
+// // console.log(list.dequeue());
+// // console.log(list.dequeue());
+// // console.log(list.dequeue());
 
 
 

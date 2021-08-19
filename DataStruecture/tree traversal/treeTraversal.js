@@ -54,45 +54,45 @@
 //         return result;
 //     }
 
-//     DFSPreOrder() {
+//     // DFSPreOrder() {
 
-//         let result = [];
-//         let current = this.root;
+//     //     let result = [];
+//     //     let current = this.root;
 
-//         function traverse(node) {
-//             result.push(node.value);
-//             if (node.left) traverse(node.left);
-//             if (node.right) traverse(node.right);
+//     //     function traverse(node) {
+//     //         result.push(node.value);
+//     //         if (node.left) traverse(node.left);
+//     //         if (node.right) traverse(node.right);
 
-//         }
-//         traverse(current)
-//         return result;
-//     }
+//     //     }
+//     //     traverse(current)
+//     //     return result;
+//     // }
 
 
-//     DFSPostOrder() {
-//         let result = [];
-//         function traverse(node) {
-//             if (node.left) traverse(node.left);
-//             if (node.right) traverse(node.right);
-//             result.push(node.value);
-//         }
-//         traverse(this.root);
-//         return result;
-//     }
+//     // DFSPostOrder() {
+//     //     let result = [];
+//     //     function traverse(node) {
+//     //         if (node.left) traverse(node.left);
+//     //         if (node.right) traverse(node.right);
+//     //         result.push(node.value);
+//     //     }
+//     //     traverse(this.root);
+//     //     return result;
+//     // }
 
-//     DFSInOrder() {
-//         let result = [];
+//     // DFSInOrder() {
+//     //     let result = [];
 
-//         function traverse(node) {
-//             if (node.left) traverse(node.left);
-//             result.push(node.value);
-//             if (node.right) traverse(node.right);
-//         }
+//     //     function traverse(node) {
+//     //         if (node.left) traverse(node.left);
+//     //         result.push(node.value);
+//     //         if (node.right) traverse(node.right);
+//     //     }
 
-//         traverse(this.root);
-//         return result;
-//     }
+//     //     traverse(this.root);
+//     //     return result;
+//     // }
 // }
 
 
@@ -110,9 +110,9 @@
 // tree.insert(81);
 // tree.insert(4);
 
-// console.log(tree.BFS());
-// console.log(tree.DFSPostOrder());
-// console.log(tree.DFSInOrder());
+// // console.log(tree.BFS());
+// // console.log(tree.DFSPostOrder());
+// // console.log(tree.DFSInOrder());
 
 
 // console.log(tree);
