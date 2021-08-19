@@ -331,6 +331,7 @@ class DoubleLinkedList {
     }
 
     remove(index) {
+        if (index < 0 || index >= this.length) return undefined;
         if (index === 0) return this.shift();
         if (index === this.length - 1) return this.pop();
         let target = this.get(index);
@@ -338,6 +339,8 @@ class DoubleLinkedList {
         let nextNodes = target.next;
         prevNodes.next = nextNodes;
         nextNodes.prev = prevNodes;
+        target.prev = null;
+        target.next = null;
         this.length--;
         return target;
     }
@@ -363,13 +366,11 @@ console.log(list.push("4"));
 //console.log(list.get(3));
 
 //console.log(list.insert(2, "test"));
-
 //console.log(list.set(2, "ttt"));
-
 
 // console.log(list.remove(0));
 // console.log(list.remove(1));
-console.log(list.remove(2));
+//console.log(list.remove(2));
 
 
 
